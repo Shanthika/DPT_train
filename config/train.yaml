@@ -1,0 +1,29 @@
+dataset:
+  data_path: '/ssd_scratch/cvit/shan_dpt/NYU/'
+  output_path: './output_monodepth/'
+  absolute_depth: False
+
+
+
+experiment:
+  gpus: 3
+  gpu_ids: [0,1,2]
+  train: True
+  batch_size: 1
+  epochs: 60
+  scale: 0.00006016
+  shift: 0.00579
+  verbose: True
+  optimize: True
+  test: False
+  invert: True,
+  backbone: "vitb_rn50_384"
+  non_negative: True,
+  enable_attention_hooks: False
+  learning_rate: 1e-5
+  logs_path: '/ssd_scratch/cvit/shan_dpt/logs/'
+  
+model:
+  model_type: 'dpt_hybrid_nyu'
+  load_ckpt: False
+  model_path: ''
